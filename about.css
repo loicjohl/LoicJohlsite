@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'Nagasaki';
+  src: url('fonts/Nagasaki.woff2') format('woff2'),
+       url('fonts/Nagasaki.woff') format('woff'),
+       url('fonts/Nagasaki.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futurist Fixed-width';
+  src: url('fonts/FuturistFixedWidth.woff2') format('woff2'),
+       url('fonts/FuturistFixedWidth.woff') format('woff'),
+       url('fonts/FuturistFixedWidth.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monofonto';
+  src: url('fonts/Monofonto.woff2') format('woff2'),
+       url('fonts/Monofonto.woff') format('woff'),
+       url('fonts/Monofonto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'biovac';
+  src: url('fonts/Bivoac Drop Shadow Demo.woff2') format('woff2'),
+       url('fonts/Bivoac Drop Shadow Demo.woff') format('woff'),
+       url('fonts/Bivoac Drop Shadow Demo.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Blastimosans';
+  src: url('fonts/BLASTIMOSANS.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'artdystopia';
+  src: url('fonts/ArtDystopia.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000316;
+}
+
+h1 {
+  font-family: 'artdystopia';
+  text-align: left;
+  padding-left: 50px;
+  margin-top: 50px;
+  font-size: 6rem;
+  color: rgb(189, 242, 255);
+  text-shadow: 5px 0px 0px rgb(0, 0, 0);
+  letter-spacing: 0.4rem;
+}
+
+.Desc{
+    font-family: 'Monofonto';
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.3rem;
+    color: rgb(0, 194, 242);
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.Contact {
+font-family: 'artdystopia';
+position: absolute;
+bottom: -400px;
+left: 20px; 
+text-align: left;
+padding-left: 50px;
+margin-top: 50px;
+font-size: 3rem;
+color: rgb(189, 242, 255);
+text-shadow: 5px 0px 0px rgb(0, 0, 0);
+letter-spacing: 0.4rem;
+}
+
+.Email {
+  font-family: 'Monofonto';
+  position: absolute;
+  bottom: -425px;
+  left: 20px; 
+  text-align: left;
+  padding-left: 50px;
+  margin-top: 50px;
+  font-size: 1.3rem;
+  color: rgb(0, 194, 242);
+}
+
+.allimages { 
+  position: relative; 
+}
+
+.IMG1,
+.IMG2 {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  position: relative;        
+  opacity: 0.9;
+  will-change: transform; 
+}
+
+
+.IMG1 {
+  top: -150px;
+  left: -60px;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.IMG2 {
+  top: -200px;
+  right: -250px;
+  opacity: 0.75;
+  z-index: -2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .IMG1, .IMG2 { transform: none !important; }
+}
+

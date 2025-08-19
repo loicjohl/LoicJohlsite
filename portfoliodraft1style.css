@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'Nagasaki';
+  src: url('fonts/Nagasaki.woff2') format('woff2'),
+       url('fonts/Nagasaki.woff') format('woff'),
+       url('fonts/Nagasaki.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futurist Fixed-width';
+  src: url('fonts/FuturistFixedWidth.woff2') format('woff2'),
+       url('fonts/FuturistFixedWidth.woff') format('woff'),
+       url('fonts/FuturistFixedWidth.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monofonto';
+  src: url('fonts/Monofonto.woff2') format('woff2'),
+       url('fonts/Monofonto.woff') format('woff'),
+       url('fonts/Monofonto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'biovac';
+  src: url('fonts/Bivoac Drop Shadow Demo.woff2') format('woff2'),
+       url('fonts/Bivoac Drop Shadow Demo.woff') format('woff'),
+       url('fonts/Bivoac Drop Shadow Demo.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Blastimosans';
+  src: url('fonts/BLASTIMOSANS.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'artdystopia';
+  src: url('fonts/ArtDystopia.ttf') format('truetype');
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000315;
+}
+
+
+.header{
+width: 100%;
+height: 200px;
+
+}
+
+
+
+h1 {
+  font-family: 'artdystopia';
+  text-align: center;
+  margin-top: 50px;
+  font-size: 6rem;
+  color: rgb(189, 242, 255);
+  text-shadow: 5px 0px 0px rgb(0, 0, 0);
+  letter-spacing: 0.4rem;
+}
+
+
+
+.carousel {
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  transform: rotateX(-20deg) translateY(-70px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  user-select: none;
+  cursor: grab;
+  position: absolute;
+}
+
+.carousel-image {
+  font-family: 'blastimosans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+  width: 200px;
+  height: 200px;
+  transform: translate3d(0, 0, -10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 4, 120);
+  text-shadow: 4px 1px 1px rgba(0, 0, 0, 0.1);
+  transform-origin: 50% 50%;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 0px solid rgb(0, 0, 0);
+
+}
+
+/* Spotify */
+.carousel-image:nth-child(1) {
+  background: linear-gradient(115deg, #a3f7ff, #00d9ff);
+  opacity: 0.85;
+}
+
+/* Live Events */
+.carousel-image:nth-child(2) {
+  background: linear-gradient(115deg, #ffbb3c, #b7dfff);
+  opacity: 0.85;
+  border-width: 0.3rem;
+  border-color: #ff8484;
+}
+
+/* About */
+.carousel-image:nth-child(3) {
+  background: linear-gradient(115deg, #fbd9ff, #ecbaf5);
+  opacity: 0.85;
+}
+
+/* Contact */
+.carousel-image:nth-child(4) {
+  background: linear-gradient(115deg, #fbd9ff, #ecbaf5);
+  opacity: 0.85;
+}
+
+/* YouTube */
+.carousel-image:nth-child(5) {
+  background: linear-gradient(115deg, #a0f2fa, #00d9ff);
+  opacity: 0.85;
+}
+
+/* Apple Music */
+.carousel-image:nth-child(6) {
+  background: linear-gradient(115deg, #a0f2fa, #00d9ff);
+  opacity: 0.85;
+}
+
+.carousel-image:hover {
+  transform: translateY(-5px) translate3d(0, 0, -10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 600px) {
+  .carousel {
+    transform: rotateX(-10deg) scale(.6) translateY(-60px);
+  }
+}

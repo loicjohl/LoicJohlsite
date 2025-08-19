@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../particles"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Coding"
+	}
+}

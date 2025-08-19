@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Monofonto';
+  src: url('fonts/Monofonto.woff2') format('woff2'),
+       url('fonts/Monofonto.woff') format('woff'),
+       url('fonts/Monofonto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'biovac';
+  src: url('fonts/Bivoac Drop Shadow Demo.woff2') format('woff2'),
+       url('fonts/Bivoac Drop Shadow Demo.woff') format('woff'),
+       url('fonts/Bivoac Drop Shadow Demo.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Blastimosans';
+  src: url('fonts/BLASTIMOSANS.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'artdystopia';
+  src: url('fonts/ArtDystopia.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000316;
+  min-height: 100svh;   /* mobile-safe viewport height */
+  /* fallback for older browsers: */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+}
+
+/* center the specific heading */
+.H1 {
+  /* keep your font, color, etc. — just remove the offsets */
+  font-family: 'Monofonto';
+  text-align: center;
+  font-size: 4rem;
+  color: rgb(189, 242, 255);
+  text-shadow: 5px 0 0 rgb(0, 0, 0);
+  letter-spacing: 0.4rem;
+
+  /* reset these so centering works */
+  margin: 0;
+  padding: 0;
+}
