@@ -1,5 +1,4 @@
 
-gsap.registerPlugin(ScrollTrigger);
 
 
 try { history.scrollRestoration = "manual"; } catch(_) {}
@@ -59,3 +58,4 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
+
