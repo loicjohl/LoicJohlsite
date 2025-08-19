@@ -161,7 +161,7 @@ h1 {
 
 @media (max-width: 700px) {
   .header { height: 64px; }           /* was 200px */
-  .carousel { transform: rotateX(-8deg) translateY(-80px); }
+  .carousel { transform: rotateX(-8deg) translateY(-80px) scale(0.75); }
   .carousel-image {
     width: 160px; height: 160px;
     margin: -80px 0 0 -80px;
@@ -170,5 +170,6 @@ h1 {
   /* smoother touch */
   .carousel { touch-action: pan-y; }
 }
+
 
 
