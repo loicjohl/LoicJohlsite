@@ -2,7 +2,7 @@ const about = document.querySelector('.Header');
 const desc = document.querySelector('.Desc');
 const text = desc.innerHTML.trim();
 
-gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 
 gsap.to(".IMG1", {
@@ -109,3 +109,4 @@ gsap.from(about, {
   ease: "back.out(0.5)",
   yoyo: true
 });
+
