@@ -2,8 +2,6 @@ const about = document.querySelector('.Header');
 const desc = document.querySelector('.Desc');
 const text = desc.innerHTML.trim();
 
-gsap.registerPlugin(ScrollTrigger);
-
 
 gsap.to(".IMG1", {
   yPercent: 20,    // tune amount
@@ -109,4 +107,5 @@ gsap.from(about, {
   ease: "back.out(0.5)",
   yoyo: true
 });
+
 
