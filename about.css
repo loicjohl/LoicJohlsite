@@ -131,3 +131,28 @@ letter-spacing: 0.4rem;
   .IMG1, .IMG2 { transform: none !important; }
 }
 
+h1 { font-size: clamp(2.4rem, 10vw, 6rem); }
+.Desc { font-size: clamp(1rem, 3.4vw, 1.3rem); }
+
+/* Mobile layout fixes */
+@media (max-width: 700px) {
+  .Contact, .Email {
+    position: static;   /* no absolute on mobile */
+    margin: 16px 0 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .Contact { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+  .Email   { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+
+  /* Images: stack, no offsets */
+  .IMG1, .IMG2 {
+    position: relative;
+    top: auto; left: auto; right: auto;
+    max-width: min(520px, 90vw);
+    margin: 12px auto;
+    opacity: 0.9;
+  }
+}
+
+
