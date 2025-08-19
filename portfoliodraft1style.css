@@ -108,13 +108,13 @@ h1 {
 
 }
 
-/* Spotify */
+
 .carousel-image:nth-child(1) {
   background: linear-gradient(115deg, #a3f7ff, #00d9ff);
   opacity: 0.85;
 }
 
-/* Live Events */
+
 .carousel-image:nth-child(2) {
   background: linear-gradient(115deg, #ffbb3c, #b7dfff);
   opacity: 0.85;
@@ -122,25 +122,24 @@ h1 {
   border-color: #ff8484;
 }
 
-/* About */
+
 .carousel-image:nth-child(3) {
   background: linear-gradient(115deg, #fbd9ff, #ecbaf5);
   opacity: 0.85;
 }
 
-/* Contact */
+
 .carousel-image:nth-child(4) {
   background: linear-gradient(115deg, #fbd9ff, #ecbaf5);
   opacity: 0.85;
 }
 
-/* YouTube */
+
 .carousel-image:nth-child(5) {
   background: linear-gradient(115deg, #a0f2fa, #00d9ff);
   opacity: 0.85;
 }
 
-/* Apple Music */
 .carousel-image:nth-child(6) {
   background: linear-gradient(115deg, #a0f2fa, #00d9ff);
   opacity: 0.85;
@@ -160,16 +159,16 @@ h1 {
 
 
 @media (max-width: 700px) {
-  .header { height: 64px; }           /* was 200px */
+  .header { height: 64px; }        
   .carousel { transform: rotateX(-8deg) translateY(-80px) scale(0.75); }
   .carousel-image {
     width: 160px; height: 160px;
     margin: -80px 0 0 -80px;
     font-size: 1.25rem; letter-spacing: 0.2rem;
   }
-  /* smoother touch */
   .carousel { touch-action: pan-y; }
 }
+
 
 
 
