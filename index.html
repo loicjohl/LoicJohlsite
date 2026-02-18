@@ -1,37 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loic Johl</title>
-    <link rel="stylesheet" href="portfoliodraft1style.css">
-  
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loic Johl</title>
+  <meta name="description" content="Loic Johl — Canadian bassist, producer, and composer." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="header"></header>
-        <h1>Loic Johl</h1>
-    <div class="carousel">
-  <button class="carousel-image">Spotify</button>
-  <button class="carousel-image">Creations</button>
-  <button class="carousel-image">About & Contact</button>
-   <button class="carousel-image">Live Events</button>
-  <button class="carousel-image">YouTube</button>
-  <button class="carousel-image">Apple Music</button>
-</div>
 
+  <!-- Grain overlay -->
+  <canvas id="grain" aria-hidden="true"></canvas>
 
+  <!-- Floating nav (appears on scroll) -->
+  <nav id="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">LJ</a>
+    <div class="nav-links">
+      <a href="#creations" class="nav-link">Creations</a>
+      <a href="#about"     class="nav-link">About</a>
+      <a href="#live"      class="nav-link">Live</a>
+      <a href="#contact"   class="nav-link">Contact</a>
+    </div>
+    <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="nav-yt">▶ YouTube</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-<script src="portfoliodraftapp.js"></script>
+  <!-- Mobile nav panel -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <a href="#creations" class="mobile-nav-link">Creations</a>
+    <a href="#about"     class="mobile-nav-link">About</a>
+    <a href="#live"      class="mobile-nav-link">Live</a>
+    <a href="#contact"   class="mobile-nav-link">Contact</a>
+    <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-nav-yt">▶ YouTube</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="waveform" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <p class="hero-eyebrow" aria-hidden="true">— BASSIST · PRODUCER · COMPOSER —</p>
+      <h1 class="hero-name" id="hero-name">LOIC JOHL</h1>
+      <div class="hero-actions">
+        <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <span class="btn-icon">▶</span> Watch on YouTube
+        </a>
+        <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="btn-ghost">Spotify</a>
+        <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="btn-ghost">Apple Music</a>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CREATIONS
+  ═══════════════════════════════════════════ -->
+  <section id="creations">
+    <div class="section-eyebrow">
+      <h2 class="section-title glitch" data-text="CREATIONS">CREATIONS</h2>
+    </div>
+
+    <!-- WHISPER -->
+    <article class="creation" data-theme="whisper" id="whisper">
+      <div class="creation-art">
+        <img src="WHISPERCOVER.png" alt="Whisper cover art" class="cover-img" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">February 2026</p>
+        <h3 class="creation-title">WHISPER</h3>
+        <p class="creation-desc">Whisper is my most recent song. This piece continues to explore my raw and atmospheric, bass centered sound, while also tapping into my metal influences. Everyone has something buried within them, everyone wants to let go. There's no Whisper we won't trust.</p>
+        <div class="creation-actions">
+          <button class="watch-btn" data-video="9sW59-aKPAs" aria-label="Watch Whisper on YouTube">
+            <span class="watch-pulse" aria-hidden="true"></span>
+            <span class="btn-icon">▶</span> WATCH
+          </button>
+          <div class="stream-pills">
+            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
+            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MELANCHOLIA -->
+    <article class="creation" data-theme="melancholia" id="melancholia">
+      <div class="creation-art">
+        <img src="MELANCHOLIACOVER.png" alt="Melancholia cover art" class="cover-img" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">April 2025</p>
+        <h3 class="creation-title">MELANCHOLIA</h3>
+        <p class="creation-desc">A deeply personal song written around March 2025. I've always struggled with self-identity, perception, insecurity — I wanted to write a song that embodies and personifies this creature and how it relates to our difficult lives. The bass dives straight into an intense groove with introspective lyrics.</p>
+        <div class="creation-actions">
+          <button class="watch-btn" data-video="E8yV-3s6g8M" aria-label="Watch Melancholia on YouTube">
+            <span class="watch-pulse" aria-hidden="true"></span>
+            <span class="btn-icon">▶</span> WATCH
+          </button>
+          <div class="stream-pills">
+            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
+            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ETERNALLY -->
+    <article class="creation" data-theme="eternally" id="eternally">
+      <div class="creation-art">
+        <img src="ETERNALLYCOVER.png" alt="Eternally cover art" class="cover-img" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">January 2025</p>
+        <h3 class="creation-title">ETERNALLY</h3>
+        <p class="creation-desc">Came together in only about 2 days — everything set almost immediately. My heart was so full of love, and the minute I laid down that first chord I knew it was going to be a beautiful expression of the halcyon days of that time. Raw, fast, and full.</p>
+        <div class="creation-actions">
+          <button class="watch-btn" data-video="Br22-4bknRQ" aria-label="Watch Eternally on YouTube">
+            <span class="watch-pulse" aria-hidden="true"></span>
+            <span class="btn-icon">▶</span> WATCH
+          </button>
+          <div class="stream-pills">
+            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
+            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="section-title">ABOUT</h2>
+        <p class="about-bio" id="about-bio">Loic Johl is a Canadian artist whose prime goal in his art is to innovate and "bring listeners to another world". Primarily a bassist who has been playing since he was a child, he taught himself to produce and mix his own music around a similar age. His music is almost entirely made with the bass — layered alongside luscious vocals and introspective lyrics, creating a unique experience for listeners. Anyone who is an outcast, alternative, struggles with their own mind and prides themselves on non-conformity will find solace in his music.</p>
+      </div>
+      <div class="about-images">
+        <img src="LOICIMG1.jpg" alt="Loic Johl" class="about-img img1" />
+        <img src="LOICIMG2.jpg" alt="Loic Johl" class="about-img img2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LIVE EVENTS
+  ═══════════════════════════════════════════ -->
+  <section id="live">
+    <div class="poster">
+      <p class="poster-top">— LIVE EVENTS —</p>
+      <h2 class="poster-name">LOIC<br>JOHL</h2>
+      <div class="poster-divider"></div>
+      <p class="poster-coming">COMING SOON</p>
+      <p class="poster-sub">Dates & venues to be announced</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contact">
+    <h2 class="section-title">CONTACT</h2>
+    <a href="mailto:loicjohl27@gmail.com" class="contact-email" id="contact-email">
+      <span class="email-prompt">_&gt;&nbsp;</span><span class="email-addr">loicjohl27@gmail.com</span>
+    </a>
+    <div class="contact-socials">
+      <a href="https://www.youtube.com/@loicjohl"                                                         target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw"       target="_blank" rel="noopener noreferrer">Spotify</a>
+      <a href="https://music.apple.com/ca/artist/loic-johl/1448267842"                                    target="_blank" rel="noopener noreferrer">Apple Music</a>
+    </div>
+    <p class="footer-sig">© Loic Johl 2025</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       YOUTUBE MODAL
+  ═══════════════════════════════════════════ -->
+  <div id="video-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+    <button id="modal-close" aria-label="Close video">✕</button>
+    <div class="modal-frame">
+      <iframe id="modal-iframe"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
-
-
-
-
-
