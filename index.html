@@ -4,51 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loic Johl</title>
-  <meta name="description" content="Loic Johl — Canadian bassist, producer, and composer." />
+  <meta name="description" content="Loic Johl — Canadian bassist, producer, and composer. Browse the full catalogue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-
   <canvas id="grain" aria-hidden="true"></canvas>
-
 
   <nav id="nav" aria-label="Main navigation">
     <a href="#hero" class="nav-logo">LJ</a>
     <div class="nav-links">
-      <a href="#creations" class="nav-link">Creations</a>
+      <a href="#catalogue" class="nav-link">Catalogue</a>
       <a href="#about"     class="nav-link">About</a>
-      <a href="#live"      class="nav-link">Live</a>
       <a href="#contact"   class="nav-link">Contact</a>
     </div>
     <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="nav-yt">▶ YouTube</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile nav panel -->
   <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
-    <a href="#creations" class="mobile-nav-link">Creations</a>
+    <a href="#catalogue" class="mobile-nav-link">Catalogue</a>
     <a href="#about"     class="mobile-nav-link">About</a>
-    <a href="#live"      class="mobile-nav-link">Live</a>
     <a href="#contact"   class="mobile-nav-link">Contact</a>
     <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-nav-yt">▶ YouTube</a>
   </div>
-  
+
+  <!-- ═══ HERO ═══ -->
   <section id="hero">
     <canvas id="waveform" aria-hidden="true"></canvas>
     <div class="hero-content">
       <p class="hero-eyebrow" aria-hidden="true">— BASSIST · PRODUCER · COMPOSER —</p>
       <h1 class="hero-name" id="hero-name">LOIC JOHL</h1>
+      <div class="manifesto-wrap">
+        <button class="manifesto-lang" id="manifesto-toggle" aria-label="Traduire en français">
+          <span class="lang-active">EN</span> / <span class="lang-inactive">FR</span>
+        </button>
+        <blockquote class="manifesto" id="manifesto" data-lang="en">
+          <span class="manifesto-text" id="manifesto-en">In an age of arbitrary fame, beauty, talent and intelligence, we must recognize the absurdity of our society. In an age where artificial reasoning can be created, we must prioritize being HUMAN. We must prioritize our metacognitive systems, and practice our understandings of existence, morality, and of course, the creation of art, the most sacred act for humans. Our identities shan't be tied to what we do to survive, it shall be tied to beauty we put in the world.</span>
+          <span class="manifesto-text" id="manifesto-fr" hidden>Dans une ère de gloire, de beauté, de talent et d'intelligence arbitraires, nous devons reconnaître l'absurdité de notre société. Dans une ère où le raisonnement artificiel peut être créé, nous devons prioriser le fait d'être HUMAIN. Nous devons prioriser nos systèmes métacognitifs et pratiquer nos compréhensions de l'existence, de la moralité, et bien sûr, de la création artistique, l'acte le plus sacré pour l'humain. Nos identités ne doivent pas être liées à ce que nous faisons pour survivre, mais à la beauté que nous apportons au monde.</span>
+        </blockquote>
+      </div>
       <div class="hero-actions">
         <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer" class="btn-primary">
           <span class="btn-icon">▶</span> Watch on YouTube
         </a>
-        <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="btn-ghost">Spotify</a>
-        <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="btn-ghost">Apple Music</a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -57,17 +61,51 @@
     </div>
   </section>
 
-
-  <section id="creations">
+  <!-- ═══ FEATURED ═══ -->
+  <section id="featured">
     <div class="section-eyebrow">
-      <h2 class="section-title glitch" data-text="CREATIONS">CREATIONS</h2>
+      <h2 class="section-title glitch" data-text="TOP PICKS">TOP PICKS</h2>
+    </div>
+    <div class="featured-grid">
+
+      <a href="#whisper" class="featured-card" data-theme="whisper">
+        <img src="covers/whisper.jpg" alt="Whisper" class="featured-img" loading="lazy" />
+        <div class="featured-overlay">
+          <span class="featured-label">WHISPER</span>
+        </div>
+      </a>
+
+      <a href="#remembering-this" class="featured-card" data-theme="remembering_this">
+        <img src="covers/remembering-this.jpg" alt="Remembering This" class="featured-img" loading="lazy" />
+        <div class="featured-overlay">
+          <span class="featured-label">REMEMBERING THIS</span>
+        </div>
+      </a>
+
+      <a href="#eternally" class="featured-card" data-theme="eternally">
+        <img src="covers/eternally.jpg" alt="Eternally" class="featured-img" loading="lazy" />
+        <div class="featured-overlay">
+          <span class="featured-label">ETERNALLY</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══ CATALOGUE ═══ -->
+  <section id="catalogue">
+    <div class="section-eyebrow">
+      <h2 class="section-title glitch" data-text="CATALOGUE">CATALOGUE</h2>
     </div>
 
     <!-- WHISPER -->
     <article class="creation" data-theme="whisper" id="whisper">
       <div class="creation-art">
-        <img src="WHISPERCOVER.png" alt="Whisper cover art" class="cover-img" />
+        <img src="covers/whisper.jpg" alt="Whisper cover art" class="cover-img" loading="lazy" />
         <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/whisper.mp3" aria-label="Preview Whisper">
+          <span class="preview-icon">▶</span>
+        </button>
       </div>
       <div class="creation-info">
         <p class="creation-date">February 2026</p>
@@ -78,9 +116,9 @@
             <span class="watch-pulse" aria-hidden="true"></span>
             <span class="btn-icon">▶</span> WATCH
           </button>
-          <div class="stream-pills">
-            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
-            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          <div class="download-pills">
+            <a href="audio/whisper.mp3" download="Loic Johl - Whisper.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Whisper.wav" download="Loic Johl - Whisper.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
           </div>
         </div>
       </div>
@@ -89,8 +127,11 @@
     <!-- MELANCHOLIA -->
     <article class="creation" data-theme="melancholia" id="melancholia">
       <div class="creation-art">
-        <img src="MELANCHOLIACOVER.png" alt="Melancholia cover art" class="cover-img" />
+        <img src="covers/melancholia.jpg" alt="Melancholia cover art" class="cover-img" loading="lazy" />
         <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/melancholia.mp3" aria-label="Preview Melancholia">
+          <span class="preview-icon">▶</span>
+        </button>
       </div>
       <div class="creation-info">
         <p class="creation-date">April 2025</p>
@@ -101,9 +142,9 @@
             <span class="watch-pulse" aria-hidden="true"></span>
             <span class="btn-icon">▶</span> WATCH
           </button>
-          <div class="stream-pills">
-            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
-            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          <div class="download-pills">
+            <a href="audio/melancholia.mp3" download="Loic Johl - Melancholia.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Melancholia.wav" download="Loic Johl - Melancholia.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
           </div>
         </div>
       </div>
@@ -112,8 +153,11 @@
     <!-- ETERNALLY -->
     <article class="creation" data-theme="eternally" id="eternally">
       <div class="creation-art">
-        <img src="ETERNALLYCOVER.png" alt="Eternally cover art" class="cover-img" />
+        <img src="covers/eternally.jpg" alt="Eternally cover art" class="cover-img" loading="lazy" />
         <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/eternally.mp3" aria-label="Preview Eternally">
+          <span class="preview-icon">▶</span>
+        </button>
       </div>
       <div class="creation-info">
         <p class="creation-date">January 2025</p>
@@ -124,16 +168,238 @@
             <span class="watch-pulse" aria-hidden="true"></span>
             <span class="btn-icon">▶</span> WATCH
           </button>
-          <div class="stream-pills">
-            <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw" target="_blank" rel="noopener noreferrer" class="stream-pill">Spotify</a>
-            <a href="https://music.apple.com/ca/artist/loic-johl/1448267842" target="_blank" rel="noopener noreferrer" class="stream-pill">Apple Music</a>
+          <div class="download-pills">
+            <a href="audio/eternally.mp3" download="Loic Johl - Eternally.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Eternally.wav" download="Loic Johl - Eternally.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
           </div>
         </div>
       </div>
     </article>
+
+    <!-- REMEMBERING THIS -->
+    <article class="creation" data-theme="remembering_this" id="remembering-this">
+      <div class="creation-art">
+        <img src="covers/remembering-this.jpg" alt="Remembering This cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/remembering-this.mp3" aria-label="Preview Remembering This">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2024</p>
+        <h3 class="creation-title">REMEMBERING THIS</h3>
+        <p class="creation-desc">This is my favorite groove I've ever come up with to date. The raw emotion and painful process of questioning love is a constant throughout the song. Details in the lyrics shall forever be closed in my heart.</p>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/remembering-this.mp3" download="Loic Johl - Remembering This.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/RememberingThis.wav" download="Loic Johl - Remembering This.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- GREY -->
+    <article class="creation" data-theme="grey" id="grey">
+      <div class="creation-art">
+        <img src="covers/grey.jpg" alt="Grey cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/grey.mp3" aria-label="Preview Grey">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2024</p>
+        <h3 class="creation-title">GREY</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/grey.mp3" download="Loic Johl - Grey.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Grey.wav" download="Loic Johl - Grey.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- INTROVERT -->
+    <article class="creation" data-theme="introvert" id="introvert">
+      <div class="creation-art">
+        <img src="covers/introvert.jpg" alt="Introvert cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/introvert.mp3" aria-label="Preview Introvert">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2024</p>
+        <h3 class="creation-title">INTROVERT.</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/introvert.mp3" download="Loic Johl - Introvert.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Introvert.wav" download="Loic Johl - Introvert.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JOHL I EP -->
+    <article class="creation creation--ep" data-theme="johl_i" id="johl-i">
+      <div class="creation-art">
+        <img src="covers/johl-i.jpg" alt="Johl I EP cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">February 2024 · EP</p>
+        <h3 class="creation-title">JOHL I</h3>
+        <p class="creation-desc">This is an EP I made when I was 18-19. I wanted to explore my production skills and collaborate with artists from Montreal and Quebec City. The final result is a short, thrilling and forever looping album that doesn't pull any punches.</p>
+        <div class="ep-tracklist">
+          <div class="ep-track" data-audio="audio/bigbigmotion.mp3">
+            <span class="ep-track-num">01</span>
+            <span class="ep-track-name">BIG BIG MOTION</span>
+            <button class="ep-preview-btn" aria-label="Preview Big Big Motion"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/bigbigmotion.mp3" download="Loic Johl - Big Big Motion.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/BigBigMotion.wav" download="Loic Johl - Big Big Motion.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+          <div class="ep-track" data-audio="audio/feelfree.mp3">
+            <span class="ep-track-num">02</span>
+            <span class="ep-track-name">FEEL FREE</span>
+            <button class="ep-preview-btn" aria-label="Preview Feel Free"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/feelfree.mp3" download="Loic Johl - Feel Free.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/FeelFree.wav" download="Loic Johl - Feel Free.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+          <div class="ep-track" data-audio="audio/lifestyle.mp3">
+            <span class="ep-track-num">03</span>
+            <span class="ep-track-name">LIFESTYLE</span>
+            <button class="ep-preview-btn" aria-label="Preview Lifestyle"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/lifestyle.mp3" download="Loic Johl - Lifestyle.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/Lifestyle.wav" download="Loic Johl - Lifestyle.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+          <div class="ep-track" data-audio="audio/ouroboros.mp3">
+            <span class="ep-track-num">04</span>
+            <span class="ep-track-name">OUROBOROS</span>
+            <button class="ep-preview-btn" aria-label="Preview Ouroboros"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/ouroboros.mp3" download="Loic Johl - Ouroboros.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/Ouroboros.wav" download="Loic Johl - Ouroboros.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+          <div class="ep-track" data-audio="audio/toimoi.mp3">
+            <span class="ep-track-num">05</span>
+            <span class="ep-track-name">TOI MOI</span>
+            <button class="ep-preview-btn" aria-label="Preview Toi Moi"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/toimoi.mp3" download="Loic Johl - Toi Moi.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/ToiMoi.wav" download="Loic Johl - Toi Moi.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+          <div class="ep-track" data-audio="audio/johl-i-interlude.mp3">
+            <span class="ep-track-num">06</span>
+            <span class="ep-track-name">JOHL I INTERLUDE</span>
+            <button class="ep-preview-btn" aria-label="Preview Johl I Interlude"><span class="preview-icon">▶</span></button>
+            <div class="ep-track-dl">
+              <a href="audio/johl-i-interlude.mp3" download="Loic Johl - Johl I Interlude.mp3" class="dl-pill dl-pill--sm">MP3</a>
+              <a href="audio/wav/JohlIInterlude.wav" download="Loic Johl - Johl I Interlude.wav" class="dl-pill dl-pill--sm dl-pill--wav">WAV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- OLDER SINGLES (2022-2023) -->
+    <div class="era-divider">
+      <span class="era-label">— EARLY WORK —</span>
+    </div>
+    <div class="era-description">
+      <p class="creation-desc">This was a special time in my life. I began creating these songs when I was 16. Specifically, "Jealous" was written in the summer of 2022. This is when I first discovered my unique style of only using the bass to create my songs. I felt like this was given from above. My soul was speaking through my instrument, and finally, began doing so in my art. These songs are emotional, and you can hear the immaturity in my artistic and overall persona. They aren't my best, but have a unique charm to them. The highlights are Jealous, a groovy and jazz influenced pop song about teenage love, and SFG (So Far Gone) another song... about teenage love... that is bilingual (French/English) and shows the building blocks for the grandiose 100+ layer harmonies I've come to make a part of my style.</p>
+    </div>
+
+    <article class="creation" data-theme="deep" id="loser">
+      <div class="creation-art">
+        <img src="covers/ep2024.jpg" alt="Loser cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/loser.mp3" aria-label="Preview Loser">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2023</p>
+        <h3 class="creation-title">LOSER</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/loser.mp3" download="Loic Johl - Loser.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Loser.wav" download="Loic Johl - Loser.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="creation" data-theme="deep" id="sfg">
+      <div class="creation-art">
+        <img src="covers/ep2024.jpg" alt="SFG cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/sfg.mp3" aria-label="Preview SFG">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2023</p>
+        <h3 class="creation-title">SFG</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/sfg.mp3" download="Loic Johl - SFG.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/SFG.wav" download="Loic Johl - SFG.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="creation" data-theme="deep" id="timeline">
+      <div class="creation-art">
+        <img src="covers/ep2024.jpg" alt="Timeline cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/timeline.mp3" aria-label="Preview Timeline">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2023</p>
+        <h3 class="creation-title">TIMELINE</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/timeline.mp3" download="Loic Johl - Timeline.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Timeline.wav" download="Loic Johl - Timeline.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="creation" data-theme="deep" id="jealous">
+      <div class="creation-art">
+        <img src="covers/ep2024.jpg" alt="Jealous cover art" class="cover-img" loading="lazy" />
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <button class="preview-btn" data-audio="audio/jealous.mp3" aria-label="Preview Jealous">
+          <span class="preview-icon">▶</span>
+        </button>
+      </div>
+      <div class="creation-info">
+        <p class="creation-date">2023</p>
+        <h3 class="creation-title">JEALOUS</h3>
+        <div class="creation-actions">
+          <div class="download-pills">
+            <a href="audio/jealous.mp3" download="Loic Johl - Jealous.mp3" class="dl-pill">↓ MP3</a>
+            <a href="audio/wav/Jealous.wav" download="Loic Johl - Jealous.wav" class="dl-pill dl-pill--wav">↓ WAV</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </section>
 
-
+  <!-- ═══ ABOUT ═══ -->
   <section id="about">
     <div class="about-inner">
       <div class="about-text">
@@ -147,45 +413,39 @@
     </div>
   </section>
 
-
-  <section id="live">
-    <div class="poster">
-      <p class="poster-top">— LIVE EVENTS —</p>
-      <h2 class="poster-name">LOIC<br>JOHL</h2>
-      <div class="poster-divider"></div>
-      <p class="poster-coming">COMING SOON</p>
-      <p class="poster-sub">Dates & venues to be announced</p>
-    </div>
-  </section>
-
-
+  <!-- ═══ CONTACT ═══ -->
   <section id="contact">
     <h2 class="section-title">CONTACT</h2>
     <a href="mailto:loicjohl27@gmail.com" class="contact-email" id="contact-email">
       <span class="email-prompt">_&gt;&nbsp;</span><span class="email-addr">loicjohl27@gmail.com</span>
     </a>
     <div class="contact-socials">
-      <a href="https://www.youtube.com/@loicjohl"                                                         target="_blank" rel="noopener noreferrer">YouTube</a>
-      <a href="https://open.spotify.com/artist/7iegIk70UybEXI5hSwlOP9?si=rt7z9Ph7QguLgs_nfTBFGw"       target="_blank" rel="noopener noreferrer">Spotify</a>
-      <a href="https://music.apple.com/ca/artist/loic-johl/1448267842"                                    target="_blank" rel="noopener noreferrer">Apple Music</a>
+      <a href="https://www.youtube.com/@loicjohl" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
     <p class="footer-sig">© Loic Johl 2025</p>
   </section>
 
-
+  <!-- ═══ VIDEO MODAL ═══ -->
   <div id="video-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
     <button id="modal-close" aria-label="Close video">✕</button>
     <div class="modal-frame">
-      <iframe id="modal-iframe"
-        frameborder="0"
+      <iframe id="modal-iframe" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin">
-      </iframe>
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- ═══ AUDIO PREVIEW BAR ═══ -->
+  <div id="audio-bar" class="audio-bar" hidden>
+    <div class="audio-bar-inner">
+      <span class="audio-bar-title" id="audio-bar-title"></span>
+      <div class="audio-bar-progress">
+        <div class="audio-bar-fill" id="audio-bar-fill"></div>
+      </div>
+      <button class="audio-bar-close" id="audio-bar-close" aria-label="Stop preview">✕</button>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
@@ -193,5 +453,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
-

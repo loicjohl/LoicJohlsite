@@ -12,11 +12,18 @@ window.scrollTo(0, 0);
 // ── Colour themes per creation ─────────────────
 const THEMES = {
   default: {
-    bg: '#000315', bg2: '#000820', bg3: '#010c28',
-    accent: '#bdf2ff', accent2: '#5be0ff',
-    accentGlow: 'rgba(93,224,255,0.18)',
-    text: '#daeeff', textMuted: '#2e4d66',
-    border: 'rgba(93,224,255,0.12)'
+    bg: '#0a0a06', bg2: '#0f0e08', bg3: '#14120a',
+    accent: '#fc4903', accent2: '#005426',
+    accentGlow: 'rgba(252,73,3,0.18)',
+    text: '#f0e8d8', textMuted: '#5a4a30',
+    border: 'rgba(252,73,3,0.14)'
+  },
+  whisper: {
+    bg: '#07080f', bg2: '#0e0f1a', bg3: '#131524',
+    accent: '#c8d8f0', accent2: '#9ab8e8',
+    accentGlow: 'rgba(180,210,240,0.15)',
+    text: '#e8f0f8', textMuted: '#3a4a6a',
+    border: 'rgba(180,210,240,0.12)'
   },
   melancholia: {
     bg: '#07051a', bg2: '#100c2e', bg3: '#18113f',
@@ -32,12 +39,40 @@ const THEMES = {
     text: '#fff8e0', textMuted: '#7a6030',
     border: 'rgba(251,191,36,0.14)'
   },
-  whisper: {
-    bg: '#07080f', bg2: '#0e0f1a', bg3: '#131524',
-    accent: '#c8d8f0', accent2: '#9ab8e8',
-    accentGlow: 'rgba(180,210,240,0.15)',
-    text: '#e8f0f8', textMuted: '#3a4a6a',
-    border: 'rgba(180,210,240,0.12)'
+  remembering_this: {
+    bg: '#020a14', bg2: '#061220', bg3: '#0a1a2e',
+    accent: '#6bb8e0', accent2: '#3a9fd4',
+    accentGlow: 'rgba(107,184,224,0.14)',
+    text: '#d0e8f8', textMuted: '#2a5070',
+    border: 'rgba(107,184,224,0.10)'
+  },
+  grey: {
+    bg: '#08080a', bg2: '#111114', bg3: '#1a1a1e',
+    accent: '#a0a0b0', accent2: '#787890',
+    accentGlow: 'rgba(160,160,176,0.12)',
+    text: '#d0d0d8', textMuted: '#484858',
+    border: 'rgba(160,160,176,0.10)'
+  },
+  introvert: {
+    bg: '#04040e', bg2: '#0a0a1c', bg3: '#10102a',
+    accent: '#7080c0', accent2: '#5060a8',
+    accentGlow: 'rgba(112,128,192,0.14)',
+    text: '#c8d0e8', textMuted: '#3a4068',
+    border: 'rgba(112,128,192,0.10)'
+  },
+  johl_i: {
+    bg: '#020208', bg2: '#060612', bg3: '#0a0a1c',
+    accent: '#4a6ea0', accent2: '#2e5088',
+    accentGlow: 'rgba(74,110,160,0.14)',
+    text: '#b0c0d8', textMuted: '#2a3858',
+    border: 'rgba(74,110,160,0.10)'
+  },
+  deep: {
+    bg: '#010108', bg2: '#03030e', bg3: '#060616',
+    accent: '#305080', accent2: '#1e3868',
+    accentGlow: 'rgba(48,80,128,0.12)',
+    text: '#8098b8', textMuted: '#1e2840',
+    border: 'rgba(48,80,128,0.08)'
   }
 };
 
@@ -124,16 +159,12 @@ function applyTheme(name) {
   function draw() {
     const W = canvas.offsetWidth, H = canvas.offsetHeight;
     ctx.clearRect(0, 0, W, H);
-
-    // draw 3 stacked sine waves with different frequencies and phases
     const waves = [
       { amp: 38, freq: 0.006, phase: 0,    alpha: 0.18, width: 1.5 },
       { amp: 20, freq: 0.012, phase: 1.4,  alpha: 0.10, width: 1 },
       { amp: 12, freq: 0.020, phase: 2.8,  alpha: 0.07, width: 0.7 }
     ];
-
     const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#bdf2ff';
-
     waves.forEach(w => {
       ctx.beginPath();
       for (let x = 0; x <= W; x++) {
@@ -147,7 +178,6 @@ function applyTheme(name) {
       ctx.stroke();
       ctx.globalAlpha = 1;
     });
-
     t += 0.018;
     requestAnimationFrame(draw);
   }
@@ -168,14 +198,14 @@ function applyTheme(name) {
 
 // ── Hero animations ────────────────────────────
 (function initHero() {
-  const name    = document.getElementById('hero-name');
-  const eyebrow = document.querySelector('.hero-eyebrow');
-  const actions = document.querySelector('.hero-actions');
-  const hint    = document.querySelector('.scroll-hint');
+  const name         = document.getElementById('hero-name');
+  const eyebrow      = document.querySelector('.hero-eyebrow');
+  const manifestoWrap = document.querySelector('.manifesto-wrap');
+  const actions      = document.querySelector('.hero-actions');
+  const hint         = document.querySelector('.scroll-hint');
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // Scramble the name in
   tl.to(name, {
     duration: 1.6,
     scrambleText: { text: 'LOIC JOHL', chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#', speed: 0.5, revealDelay: 0.3 },
@@ -184,13 +214,36 @@ function applyTheme(name) {
 
   tl.from(name, { y: 60, duration: 1.4, ease: 'power4.out' }, 0.2);
 
-  tl.to(eyebrow, { opacity: 0.65, y: 0, duration: 0.8 }, 0.9)
+  tl.to(eyebrow, { opacity: 1, y: 0, duration: 0.8 }, 0.9)
     .from(eyebrow, { y: 12 }, '<');
 
-  tl.to(actions, { opacity: 1, duration: 0.7 }, 1.2)
+  tl.to(manifestoWrap, { opacity: 0.85, y: 0, duration: 1 }, 1.1)
+    .from(manifestoWrap, { y: 20 }, '<');
+
+  tl.to(actions, { opacity: 1, duration: 0.7 }, 1.6)
     .from(actions, { y: 16 }, '<');
 
-  tl.to(hint, { opacity: 1, duration: 0.6 }, 1.6);
+  tl.to(hint, { opacity: 1, duration: 0.6 }, 2);
+})();
+
+// ── Featured cards entrance ──────────────────
+(function initFeatured() {
+  const cards = document.querySelectorAll('.featured-card');
+  cards.forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+      duration: 0.8,
+      delay: i * 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+        once: true
+      }
+    });
+  });
 })();
 
 // ── Creations: reveal + theme shift ───────────
@@ -202,7 +255,6 @@ function applyTheme(name) {
     const art   = item.querySelector('.creation-art');
     const theme = item.dataset.theme;
 
-    // reveal on scroll
     gsap.to(info, {
       opacity: 1,
       x: 0,
@@ -227,14 +279,21 @@ function applyTheme(name) {
       }
     });
 
-    // colour theme shift when creation fills viewport
     ScrollTrigger.create({
       trigger: item,
       start: 'top 40%',
       end: 'bottom 40%',
       onEnter:      () => applyTheme(theme),
       onEnterBack:  () => applyTheme(theme),
-      onLeaveBack:  () => applyTheme('default'),
+      onLeaveBack:  () => {
+        // find previous creation's theme or default
+        const prev = item.previousElementSibling;
+        if (prev && prev.classList.contains('creation')) {
+          applyTheme(prev.dataset.theme);
+        } else {
+          applyTheme('default');
+        }
+      },
     });
   });
 
@@ -283,7 +342,6 @@ function applyTheme(name) {
     }
   });
 
-  // parallax on about images
   gsap.to('.img1', {
     yPercent: -12,
     ease: 'none',
@@ -307,25 +365,10 @@ function applyTheme(name) {
   });
 })();
 
-// ── Live Events: poster entrance ──────────────
-(function initLive() {
-  const poster = document.querySelector('.poster');
-  if (!poster) return;
-  gsap.from(poster, {
-    opacity: 0,
-    scale: 0.96,
-    y: 40,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: poster, start: 'top 75%', once: true }
-  });
-})();
-
 // ── Contact: terminal email glitch ─────────────
 (function initContact() {
   const el = document.getElementById('contact-email');
   if (!el) return;
-
   el.addEventListener('mouseenter', () => {
     const addr = el.querySelector('.email-addr');
     gsap.to(addr, {
@@ -349,9 +392,7 @@ function applyTheme(name) {
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => {
-      modal.classList.add('open');
-    });
+    requestAnimationFrame(() => modal.classList.add('open'));
   }
 
   function closeModal() {
@@ -368,13 +409,135 @@ function applyTheme(name) {
   });
 
   close.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+})();
 
-  modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
+// ── Audio preview system ──────────────────────
+(function initAudioPreview() {
+  const bar      = document.getElementById('audio-bar');
+  const barTitle = document.getElementById('audio-bar-title');
+  const barFill  = document.getElementById('audio-bar-fill');
+  const barClose = document.getElementById('audio-bar-close');
+  let audio      = null;
+  let currentBtn = null;
+  let rafId      = null;
+
+  function getTrackName(btn) {
+    // For EP tracks, get track name
+    const epTrack = btn.closest('.ep-track');
+    if (epTrack) {
+      const name = epTrack.querySelector('.ep-track-name');
+      return name ? name.textContent : 'Preview';
+    }
+    // For regular creations, get title
+    const creation = btn.closest('.creation');
+    if (creation) {
+      const title = creation.querySelector('.creation-title');
+      return title ? title.textContent : 'Preview';
+    }
+    return 'Preview';
+  }
+
+  function updateProgress() {
+    if (audio && audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      barFill.style.width = pct + '%';
+    }
+    rafId = requestAnimationFrame(updateProgress);
+  }
+
+  function stopPlayback() {
+    if (audio) {
+      audio.pause();
+      audio.src = '';
+      audio = null;
+    }
+    if (rafId) cancelAnimationFrame(rafId);
+    if (currentBtn) {
+      currentBtn.classList.remove('playing');
+      currentBtn = null;
+    }
+    bar.classList.remove('visible');
+    barFill.style.width = '0%';
+  }
+
+  function play(btn) {
+    const src = btn.dataset.audio || btn.closest('[data-audio]')?.dataset.audio;
+    if (!src) return;
+
+    // If same button, toggle off
+    if (currentBtn === btn && audio && !audio.paused) {
+      stopPlayback();
+      return;
+    }
+
+    stopPlayback();
+
+    audio = new Audio(src);
+    currentBtn = btn;
+    btn.classList.add('playing');
+
+    barTitle.textContent = getTrackName(btn);
+    bar.hidden = false;
+    requestAnimationFrame(() => bar.classList.add('visible'));
+
+    audio.play().catch(() => stopPlayback());
+    rafId = requestAnimationFrame(updateProgress);
+
+    audio.addEventListener('ended', stopPlayback);
+  }
+
+  // Cover preview buttons
+  document.querySelectorAll('.preview-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      play(btn);
+    });
   });
 
+  // EP track preview buttons
+  document.querySelectorAll('.ep-preview-btn').forEach(btn => {
+    const track = btn.closest('.ep-track');
+    if (track) {
+      btn.dataset.audio = track.dataset.audio;
+    }
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      play(btn);
+    });
+  });
+
+  barClose.addEventListener('click', stopPlayback);
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (e.key === 'Escape' && audio) stopPlayback();
+  });
+})();
+
+// ── Manifesto EN/FR toggle ────────────────────
+(function initManifestoToggle() {
+  const toggle = document.getElementById('manifesto-toggle');
+  const enText = document.getElementById('manifesto-en');
+  const frText = document.getElementById('manifesto-fr');
+  if (!toggle || !enText || !frText) return;
+
+  let isEn = true;
+
+  toggle.addEventListener('click', () => {
+    isEn = !isEn;
+    enText.hidden = !isEn;
+    frText.hidden = isEn;
+
+    const spans = toggle.querySelectorAll('span');
+    if (isEn) {
+      spans[0].className = 'lang-active';
+      spans[1].className = 'lang-inactive';
+      toggle.setAttribute('aria-label', 'Traduire en français');
+    } else {
+      spans[0].className = 'lang-inactive';
+      spans[1].className = 'lang-active';
+      toggle.setAttribute('aria-label', 'Translate to English');
+    }
   });
 })();
 
