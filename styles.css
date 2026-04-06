@@ -759,17 +759,18 @@ section {
 }
 
 .dl-pill--wav {
-  border-color: var(--text-muted);
-  color: var(--text-muted);
+  border-color: var(--accent2);
+  color: var(--accent2);
 }
 .dl-pill--wav::before {
-  background: var(--text-muted);
-  opacity: 0.04;
+  background: var(--accent2);
+  opacity: 0.06;
 }
 .dl-pill--wav:hover {
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--accent2);
+  background: var(--accent2);
   color: var(--bg);
+  box-shadow: 0 0 24px rgba(0, 84, 38, 0.4), 0 0 48px rgba(0, 84, 38, 0.2);
 }
 
 .dl-pill--sm {
